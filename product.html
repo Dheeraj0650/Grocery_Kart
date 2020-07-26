@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="css/style_main.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Piedra&family=Righteous&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section class="top-section">
+    <div class="container-fluid" style="text-align:center;z-index:1">
+
+      <div class="row" >
+        <div class="col-lg-6">
+          <div class="container name">
+            <a href="#"><img src="logo.jpeg" width=70px></a>
+            <span style = "margin-left:2rem;">Dheeru's Kart</span>
+          </div>
+
+        </div>
+        <div class="col-lg-4"  ">
+          <div class="search-box">
+            <input type="text" placeholder="Type to search" name="" value="" class="search-txt">
+            <a href="#" class="search-btn"><i class="fas fa-search" ></i></a>
+          </div>
+        </div>
+
+
+        <div class="col-lg-2" style="z-index:1;>
+          <a href="#" style="z-index:1;margin-top:2rem;"><button type="button" class="btn1 nav-btn"><i class="fas fa-shopping-cart " style="margin-right:10px"></i>Cart</button></a>
+
+        </div>
+
+
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #36096d;text-align:center;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="background-color:white">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-auto" id="navbarNavDropdown" style="text-align:center;justify-content:center;align-items:center;padding-bottom:2rem;">
+          <ul class="navbar-nav" style="line-height:3">
+            <li class="nav-item dropdown" style="padding-right:2rem;">
+              <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
+                Electronics
+              </button>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown" style="padding-right:2rem;">
+              <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
+                TV & Appliances
+              </button>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown" style="padding-right:2rem;">
+              <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
+                Men
+              </button>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown" style="padding-right:2rem;">
+              <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
+                Women
+              </button>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown" style="padding-right:2rem;">
+              <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
+                Baby & Kids
+              </button>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown" style="padding-right:2rem;">
+              <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
+                Home & Furniture
+              </button>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+
+    <!-- <div class="row tag-line">
+        <div class="col">
+          Hakuna Matata!
+        </div>
+
+      </div> -->
+
+
+
+
+
+  </section>
+  <section class="content_section">
+    <div class="container-fluid">
+      <div class="row ">
+        <div class="col-lg-2 col-md-12 filter-col">
+          <h1 style="font-family: 'Roboto', sans-serif;font-size: 2rem;margin-bottom:2rem;color:#07031a;"><i class="fas fa-filter" style="font-size: 1.6rem;padding-right:0.5rem"></i>Filter</h1>
+          <div class="row">
+            <div class="col dropdown-col">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">RAM</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </div>
+          <hr class="divider">
+          <div class="row">
+            <div class="col">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">BRAND</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+
+            </div>
+
+          </div>
+          <hr class="divider">
+          <div class="row">
+            <div class="col">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CUSTOMER RATING</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </div>
+          <hr class="divider">
+          <div class="row">
+            <div class="col">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">INTERNAL STORAGE</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </div>
+          <hr class="divider">
+          <div class="row">
+            <div class="col">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">OPERATING SYSTEM</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </div>
+          <hr class="divider">
+          <div class="row">
+            <div class="col">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">SCREEN SIZE</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+
+            </div>
+
+          </div>
+          <hr class="divider">
+          <div class="row">
+            <div class="col">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">PROCESSOR BRAND</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </div>
+          <hr class="divider">
+          <div class="row">
+            <div class="col">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">RESOLUTION TYPE</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+
+            </div>
+
+          </div>
+          <hr class="divider">
+          <div class="row">
+            <div class="col">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">NETWORK TYPE</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </div>
+          <hr class="divider">
+          <div class="row">
+            <div class="col">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">BATTERY CAPACITY</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+
+            </div>
+
+          </div>
+          <hr class="divider">
+          <div class="row">
+            <div class="col">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">BUDGET</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </div>
+          <hr class="divider">
+        </div>
+
+        <div class="col-lg-10 col-md-12">
+
+          <div class="container product-container" style="border-left:5px solid #6f4a8e">
+            <div class="card">
+              <div class="circle">
+                <h2>01</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                  aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                </p>
+                <a href="#">Read more</a>
+              </div>
+
+            </div>
+
+            <div class="card">
+              <div class="circle">
+                <h2>01</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                  aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                </p>
+                <a href="#">Read more</a>
+              </div>
+
+            </div>
+
+
+            <div class="card">
+              <div class="circle">
+                <h2>01</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                  aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                </p>
+                <a href="#">Read more</a>
+              </div>
+
+            </div>
+
+            <div class="card">
+              <div class="circle">
+                <h2>01</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                  aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                </p>
+                <a href="#">Read more</a>
+              </div>
+
+            </div>
+
+
+            <div class="card">
+              <div class="circle">
+                <h2>01</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                  aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                </p>
+                <a href="#">Read more</a>
+              </div>
+
+            </div>
+
+
+            <div class="card">
+              <div class="circle">
+                <h2>01</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                  aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                </p>
+                <a href="#">Read more</a>
+              </div>
+
+            </div>
+
+
+            <div class="card">
+              <div class="circle">
+                <h2>01</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                  aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                </p>
+                <a href="#">Read more</a>
+              </div>
+
+            </div>
+
+
+            <div class="card">
+              <div class="circle">
+                <h2>01</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                  aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                </p>
+                <a href="#">Read more</a>
+              </div>
+
+            </div>
+            <div class="card">
+              <div class="circle">
+                <h2>01</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                  aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                </p>
+                <a href="#">Read more</a>
+              </div>
+
+            </div>
+            <div class="card">
+              <div class="circle">
+                <h2>01</h2>
+              </div>
+              <div class="content">
+                <p>
+                  Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                  aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                </p>
+                <a href="#">Read more</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- Add Pagination -->
+
+      </div>
+
+      <!-- Swiper JS -->
+
+
+      <!-- Initialize Swiper -->
+
+    </div>
+
+
+
+
+  </section>
+
+</body>
+<footer>
+  <section class="section-4">
+    <div class="container-fluid footer-container" style="color:#ffffdd">
+      <div class="row" style="font-family: 'Roboto', sans-serif;font-size: 1.2rem;margin-bottom:1.5rem;color:#d3de32">
+        <div class="col">
+          ABOUT
+        </div>
+        <div class="col">
+          HELP
+        </div>
+        <div class="col">
+          POLICY
+        </div>
+        <div class="col">
+          SOCIAL
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col">
+          Contact Us
+        </div>
+        <div class="col">
+          Payments
+        </div>
+        <div class="col">
+          Return Policy
+        </div>
+        <div class="col">
+          Facebook
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col">
+          About Us
+        </div>
+        <div class="col">
+          shipping
+        </div>
+        <div class="col">
+          Terms Of Use
+        </div>
+        <div class="col">
+          Twitter
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col">
+          Careers
+        </div>
+        <div class="col">
+          Cancellation & Returns
+        </div>
+        <div class="col">
+          Security
+        </div>
+        <div class="col">
+          YouTube
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col">
+          FAQ
+        </div>
+        <div class="col">
+          Privacy
+        </div>
+        <div class="col">
+
+        </div>
+
+      </div>
+
+      <div class="container social-menu">
+        <a href="" class="linkedin"><i class="fab fa-linkedin fa-4x" style="  color: #f7f5dd;"></i></a>
+        <a href="" class="facebook"><i class="fab fa-facebook-square fa-4x" style="  color: #f7f5dd;"></i></a>
+        <a href="" class="youtube"><i class="fab fa-youtube-square fa-4x" style="  color: #f7f5dd;"></i></a>
+        <a href="" class="instagram"><i class="fab fa-instagram-square fa-4x" style="  color: #f7f5dd;"></i></a>
+        <a href="" class="twitter"><i class="fab fa-twitter-square fa-4x" style="  color: #f7f5dd;"></i></a>
+
+      </div>
+
+  </section>
+
+</footer>
+
+</html>
