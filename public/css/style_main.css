@@ -1,14 +1,8 @@
-/* .section-3{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-attachment: fixed;
-} */
+
 
 
 .thumb
-{  
+{
     display: inline-block;
     width: 100px;
     height: 100px;

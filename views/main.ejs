@@ -1,43 +1,21 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <title></title>
-
   <link rel="stylesheet" href="css/style_main.css">
+
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="../package/swiper-bundle.min.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
   <!-- Demo styles -->
-  <style>
-    .section-3 {
-      background: #fff;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
 
-    .swiper-container {
-      width: 100%;
-      padding-top: 10rem;
-      padding-bottom: 10rem;
-    }
-
-    .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: 20rem;
-      height: 20rem;
-
-
-    }
-  </style>
   <!-- JS, Popper.js, and jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -53,7 +31,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Piedra&family=Righteous&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <style >
+  .swiper-container {
+    width: 100%;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
 
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 20rem;
+    height: 20rem;
+  }
+
+  </style>
 
 
 
@@ -65,7 +57,6 @@
 
       <div class="row">
         <div class="col-lg-6">
-
           <div class="container name">
             <a href="#"><img src="logo.jpeg" width=70px></a>
             <span style="margin-left:2rem;">Dheeru's Kart</span>
@@ -172,7 +163,7 @@
 
 
   </section>
-
+<%for(let i = 0; i<4 ;i++){ %>
 
   <section class="content_section">
     <div class="container-fluid">
@@ -335,10 +326,6 @@
             <div class="swiper-pagination"></div>
           </div>
 
-          <!-- Swiper JS -->
-
-
-          <!-- Initialize Swiper -->
 
         </div>
       </div>
@@ -347,6 +334,8 @@
 
   </section>
 
+<%}%>
+<!--
   <section class="content_section">
     <div class="container-fluid">
       <div class="row ">
@@ -504,188 +493,11 @@
                 </div>
               </div>
             </div>
-            <!-- Add Pagination -->
+
             <div class="swiper-pagination"></div>
           </div>
 
-          <!-- Swiper JS -->
 
-
-          <!-- Initialize Swiper -->
-
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <section class="content_section">
-    <div class="container-fluid">
-      <div class="row ">
-
-        <div class="col">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="card">
-                  <div class="circle">
-                    <h2>01</h2>
-                  </div>
-                  <div class="content">
-                    <p>
-                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
-                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
-                    </p>
-                    <a href="#">Read more</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <div class="circle">
-                    <h2>01</h2>
-                  </div>
-                  <div class="content">
-                    <p>
-                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
-                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
-                    </p>
-                    <a href="#">Read more</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <div class="circle">
-                    <h2>01</h2>
-                  </div>
-                  <div class="content">
-                    <p>
-                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
-                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
-                    </p>
-                    <a href="#">Read more</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <div class="circle">
-                    <h2>01</h2>
-                  </div>
-                  <div class="content">
-                    <p>
-                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
-                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
-                    </p>
-                    <a href="#">Read more</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <div class="circle">
-                    <h2>01</h2>
-                  </div>
-                  <div class="content">
-                    <p>
-                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
-                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
-                    </p>
-                    <a href="#">Read more</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <div class="circle">
-                    <h2>01</h2>
-                  </div>
-                  <div class="content">
-                    <p>
-                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
-                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
-                    </p>
-                    <a href="#">Read more</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <div class="circle">
-                    <h2>01</h2>
-                  </div>
-                  <div class="content">
-                    <p>
-                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
-                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
-                    </p>
-                    <a href="#">Read more</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <div class="circle">
-                    <h2>01</h2>
-                  </div>
-                  <div class="content">
-                    <p>
-                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
-                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
-                    </p>
-                    <a href="#">Read more</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <div class="circle">
-                    <h2>01</h2>
-                  </div>
-                  <div class="content">
-                    <p>
-                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
-                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
-                    </p>
-                    <a href="#">Read more</a>
-                  </div>
-
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card">
-                  <div class="circle">
-                    <h2>01</h2>
-                  </div>
-                  <div class="content">
-                    <p>
-                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
-                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
-                    </p>
-                    <a href="#">Read more</a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-          </div>
-
-          <!-- Swiper JS -->
-
-
-          <!-- Initialize Swiper -->
 
         </div>
       </div>
@@ -852,14 +664,9 @@
                 </div>
               </div>
             </div>
-            <!-- Add Pagination -->
+
             <div class="swiper-pagination"></div>
           </div>
-
-          <!-- Swiper JS -->
-
-
-          <!-- Initialize Swiper -->
 
         </div>
       </div>
@@ -868,101 +675,179 @@
 
   </section>
 
+  <section class="content_section">
+    <div class="container-fluid">
+      <div class="row ">
 
-  <script src="index.js" charset="utf-8"></script>
+        <div class="col">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="circle">
+                    <h2>01</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                    </p>
+                    <a href="#">Read more</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="circle">
+                    <h2>01</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                    </p>
+                    <a href="#">Read more</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="circle">
+                    <h2>01</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                    </p>
+                    <a href="#">Read more</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="circle">
+                    <h2>01</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                    </p>
+                    <a href="#">Read more</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="circle">
+                    <h2>01</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                    </p>
+                    <a href="#">Read more</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="circle">
+                    <h2>01</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                    </p>
+                    <a href="#">Read more</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="circle">
+                    <h2>01</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                    </p>
+                    <a href="#">Read more</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="circle">
+                    <h2>01</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                    </p>
+                    <a href="#">Read more</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="circle">
+                    <h2>01</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                    </p>
+                    <a href="#">Read more</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card">
+                  <div class="circle">
+                    <h2>01</h2>
+                  </div>
+                  <div class="content">
+                    <p>
+                      Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
+                      aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
+                    </p>
+                    <a href="#">Read more</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section> -->
+
+
+  <script src="javascripts/3DSwiper.js" charset="utf-8"></script>
+
 
 </body>
-<footer>
-  <section class="section-4">
-    <div class="container-fluid footer-container" style="color:#ffffdd">
-      <div class="row" style="font-family: 'Roboto', sans-serif;font-size: 1.2rem;margin-bottom:1.5rem;color:#d3de32">
-        <div class="col">
-          ABOUT
-        </div>
-        <div class="col">
-          HELP
-        </div>
-        <div class="col">
-          POLICY
-        </div>
-        <div class="col">
-          SOCIAL
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col">
-          Contact Us
-        </div>
-        <div class="col">
-          Payments
-        </div>
-        <div class="col">
-          Return Policy
-        </div>
-        <div class="col">
-          Facebook
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col">
-          About Us
-        </div>
-        <div class="col">
-          shipping
-        </div>
-        <div class="col">
-          Terms Of Use
-        </div>
-        <div class="col">
-          Twitter
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col">
-          Careers
-        </div>
-        <div class="col">
-          Cancellation & Returns
-        </div>
-        <div class="col">
-          Security
-        </div>
-        <div class="col">
-          YouTube
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col">
-
-        </div>
-        <div class="col">
-          FAQ
-        </div>
-        <div class="col">
-          Privacy
-        </div>
-        <div class="col">
-
-        </div>
-
-      </div>
-
-      <div class="container social-menu">
-        <a href="" class="linkedin"><i class="fab fa-linkedin fa-4x" style="  color: #f7f5dd;"></i></a>
-        <a href="" class="facebook"><i class="fab fa-facebook-square fa-4x" style="  color: #f7f5dd;"></i></a>
-        <a href="" class="youtube"><i class="fab fa-youtube-square fa-4x" style="  color: #f7f5dd;"></i></a>
-        <a href="" class="instagram"><i class="fab fa-instagram-square fa-4x" style="  color: #f7f5dd;"></i></a>
-        <a href="" class="twitter"><i class="fab fa-twitter-square fa-4x" style="  color: #f7f5dd;"></i></a>
-
-      </div>
-
-  </section>
-
-</footer>
-
-
+<%- include("footer")-%>
 </html>
