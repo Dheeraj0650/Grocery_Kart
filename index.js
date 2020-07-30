@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
-mongoose.connect("mongodb+srv://Dheeru_0650:@mflix-t3llq.mongodb.net/Grocerys", {
+mongoose.connect("mongodb+srv://:@mflix-t3llq.mongodb.net/Grocerys", {
   useNewUrlParser: true
 });
 
