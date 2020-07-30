@@ -85,21 +85,21 @@
         <input type="checkbox" id="chk" aria-hidden="true">
 
         <div class="signup">
-          <form>
+          <form action = "/register" method="POST" >
             <label for="chk" aria-hidden="true" class="login-label">Sign up</label>
-            <input type="text" name="txt" placeholder="User name" required="" class="login-input">
+            <input type="text" name="name" placeholder="User name" required="" class="login-input">
             <input type="email" name="email" placeholder="Email" required="" class="login-input">
-            <input type="password" name="pswd" placeholder="Password" required="" class="login-input">
-            <button class="hover-button">Sign up</button>
+            <input type="password" name="password" placeholder="Password" required="" class="login-input">
+            <button type="submit" class="hover-button">Sign up</button>
           </form>
         </div>
 
         <div class="login">
-          <form>
+          <form action = "/login" method = "POST">
             <label for="chk" aria-hidden="true" class="login-label">Login</label>
             <input type="email" name="email" placeholder="Email" required="" class="login-input">
-            <input type="password" name="pswd" placeholder="Password" required="" class="login-input">
-            <button class="hover-button">Login</button>
+            <input type="password" name="password" placeholder="Password" required="" class="login-input">
+            <button type="submit" class="hover-button">Login</button>
           </form>
         </div>
       </div>
