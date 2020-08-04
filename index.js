@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+<<<<<<< HEAD
 app.use(session({
 
   resave: false,
@@ -26,6 +27,9 @@ app.use(passport.session());
 
 
 mongoose.connect("mongodb+srv:@mflix-t3llq.mongodb.net/Grocerys", {
+=======
+mongoose.connect("mongodb+srv://Grocerys", {
+>>>>>>> e0caf550d5d3202bd1c0cc228f0fb8712a2e92c3
   useNewUrlParser: true
 });
 
