@@ -129,8 +129,8 @@ text-align: center;
 
 .card {
   position: relative;
-  width: 300px;
-  height: 420px;
+  width: 320px;
+  height: 450px;
   background: white;
   /* margin: 20px; */
   border-radius: 20px;
@@ -140,8 +140,8 @@ text-align: center;
 }
 .product-container .card{
   margin:  2rem;
-  width: 300px;
-  height: 420px;
+  width: 320px;
+  height: 450px;
   background: white;
   /* margin: 20px; */
   border-radius: 20px;
@@ -152,23 +152,19 @@ text-align: center;
 
 .card .circle {
   position: relative;
-  width: 100%;
-
   background: black;
   /* clip-path: circle(180px at center 0); */
   text-align: center;
 }
 
-.card .circle h2 {
+.card .circle h3 {
   color: white;
-  font-size: 2em;
-  padding: 30px 0;
+  font-size: 1.5em;
+  padding: 10px 0;
 }
 
 .card .content {
-  position: absolute;
-  bottom: 10px;
-  padding: 20px;
+   height: 20rem;
   text-align: center;
 }
 
@@ -218,8 +214,8 @@ text-align: center;
 
 .content_section .card:hover {
   filter: blur(0px);
-  transform: scale(1.2);
-  opacity: 1;
+  transform: scale(1.1);
+  opacity: 2;
 }
 
 
@@ -246,7 +242,7 @@ text-align: center;
 .nav-btn {
   border: 4px solid #07031a;
   background: none;
-  padding: 0.4rem 1.4rem;
+  padding: 0.1rem 1.1rem;
   font-size: 1.2rem;
   font-family: 'Noto Sans JP', sans-serif;
   cursor: pointer;
@@ -303,11 +299,12 @@ text-align: center;
 }
 
 
-.name {
+.top-section .name {
 
   font-size: 2.8rem;
   color: #feceab;
   font-family: 'Piedra', cursive;
+  padding:1.3rem 0 2rem 0;
 }
 
 .description{

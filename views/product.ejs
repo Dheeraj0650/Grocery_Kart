@@ -31,7 +31,7 @@
 
       <div class="row">
         <div class="col-lg-6">
-          <div class="container name">
+          <div class="name" style="float:left">
             <a href="#"><img src="logo.jpeg" width=70px></a>
             <span style="margin-left:2rem;">Dheeru's Kart</span>
           </div>
@@ -47,6 +47,7 @@
 
       <div class="col-lg-2" style="z-index:1;>
           <a href=" #" style="z-index:1;margin-top:2rem;"><button type="button" class="btn1 nav-btn"><i class="fas fa-shopping-cart " style="margin-right:10px"></i>Cart</button></a>
+          <a href=" #" style="z-index:1;margin-top:2rem;"><button type="button" class="btn1 nav-btn"><i class="fas fa-sign-out-alt" style="margin-right:10px"></i>Logout</button></a>
 
       </div>
 
@@ -57,10 +58,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse ml-auto" id="navbarNavDropdown" style="text-align:center;justify-content:center;align-items:center;padding-bottom:2rem;">
-        <ul class="navbar-nav" style="line-height:3">
-          <li class="nav-item dropdown" style="padding-right:2rem;">
+        <ul class="navbar-nav" style="line-height:3;">
+          <li class="nav-item dropdown" style="padding-right:1rem;">
             <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
-              Electronics
+              Staples
             </button>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
               <a class="dropdown-item" href="#">Action</a>
@@ -68,9 +69,9 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li class="nav-item dropdown" style="padding-right:2rem;">
+          <li class="nav-item dropdown" style="padding-right:1rem;">
             <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
-              TV & Appliances
+              Snacks & Beverages
             </button>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
               <a class="dropdown-item" href="#">Action</a>
@@ -78,9 +79,9 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li class="nav-item dropdown" style="padding-right:2rem;">
+          <li class="nav-item dropdown" style="padding-right:1rem;">
             <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
-              Men
+              Packaged Food
             </button>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
               <a class="dropdown-item" href="#">Action</a>
@@ -88,9 +89,9 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li class="nav-item dropdown" style="padding-right:2rem;">
+          <li class="nav-item dropdown" style="padding-right:1rem;">
             <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
-              Women
+              Personal & Baby Care
             </button>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
               <a class="dropdown-item" href="#">Action</a>
@@ -98,9 +99,9 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li class="nav-item dropdown" style="padding-right:2rem;">
+          <li class="nav-item dropdown" style="padding-right:1rem;">
             <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
-              Baby & Kids
+              Household Care
             </button>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
               <a class="dropdown-item" href="#">Action</a>
@@ -108,9 +109,9 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li class="nav-item dropdown" style="padding-right:2rem;">
+          <li class="nav-item dropdown" style="padding-right:1rem;">
             <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
-              Home & Furniture
+              Dairy & Eggs
             </button>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
               <a class="dropdown-item" href="#">Action</a>
@@ -298,19 +299,22 @@
         <div class="col-lg-10 col-md-12">
 
           <div class="container product-container" style="border-left:5px solid #6f4a8e">
-            <%for(let i = 0; i < 7; i++){%>
+            <%for(let i = 0; i < grocery_array.length; i++){%>
             <div class="card">
               <div class="circle">
-                <h2>01</h2>
+                <h3><%= grocery_array[i].name %></h3>
+              </div>
+              <div class="content" style="text-align:center;opacity:1">
+                <img src="<%= grocery_array[i].images[0]%>" alt="" width="240" style="object-fit:contain;height:16rem">
               </div>
               <div class="content">
-                <p>
-                  Bayerische Motoren Werke AG, commonly referred to as BMW, is a German multinational company which produces luxury vehicles and motorcycles. The company was founded in 1916 as a manufacturer of
-                  aircraft engines, which it produced from 1917 until 1918 and again from 1933 to 1945.
-                </p>
-                <a href="#">Read more</a>
+                <a href="" value = "" style="position:absolute;left:1rem;bottom:1.5rem">more</a>
+                <span style="position:absolute;right:1rem;bottom:1.5rem">
+                  <h4 style="display:inline">₹<%= grocery_array[i].final_price%></h4> <del>
+                    <h5 style="display:inline">₹<%= grocery_array[i].Actual_price%></h5>
+                  </del><span style="color:green">&nbsp <%= grocery_array[i].discount%>% off</span>
+                </span>
               </div>
-
             </div>
             <%}%>
            <!--
