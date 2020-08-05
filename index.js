@@ -179,7 +179,7 @@ passport.use(new OutlookStrategy({
 ));
 
 
-app.get("/", function(req, res) {
+app.get(__dirname + "/", function(req, res) {
   // Oil.find({name : {$regex : new RegExp("nut", "i")}},function(err,values){
   //   console.log(values);
   // });
@@ -231,7 +231,7 @@ app.get('/auth/outlook',
 
 app.get('/auth/outlook/Grocery_Kart',
   passport.authenticate('windowslive', {
-    failureRedirect: '/'
+    failureRedirect: __dirname + "/"
   }),
   function(req, res) {
     // Successful authentication, redirect home.
@@ -239,7 +239,7 @@ app.get('/auth/outlook/Grocery_Kart',
   });
 
 
-app.post("/register", function(req, res) {
+app.post(__dirname + "/register", function(req, res) {
 
   User.register({
     username: req.body.username
@@ -249,7 +249,7 @@ app.post("/register", function(req, res) {
     } else {
       passport.authenticate("local")(req, res, function() {
         console.log("hello");
-        res.redirect("/main");
+        res.redirect(__dirname + "/main");
       });
     }
   });
@@ -292,11 +292,11 @@ app.get("/main", function(req, res) {
 
 
   } else {
-    res.redirect("/");
+    res.redirect(__dirname + "/");
   }
 });
 
-app.post("/login", function(req, res) {
+app.post(__dirname + "/login", function(req, res) {
   const user = new User({
     username: req.body.username,
     password: req.body.password
@@ -307,13 +307,13 @@ app.post("/login", function(req, res) {
 
     } else {
       passport.authenticate("local")(req, res, function() {
-        res.redirect("/main");
+        res.redirect(__dirname + "/main");
       });
     }
   });
 
 
-  app.post("/product", function(req, res) {
+  app.post(__dirname + "/product", function(req, res) {
     Shampoo.find(function(err, values) {
       res.render("product", {
         grocery_array: values
@@ -342,12 +342,12 @@ app.post("/login", function(req, res) {
 
 });
 
-app.get("/logout", function(req, res) {
+app.get(__dirname + "/logout", function(req, res) {
   req.logout();
   res.redirect("/");
 });
 
-app.post("/item", function(req, res) {
+app.post(__dirname + "/item", function(req, res) {
   console.log(req.body.product_name);
   var body = req.body.product_name.split("#");
   array_name[Number(body[1])].find({
