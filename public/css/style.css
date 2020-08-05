@@ -223,7 +223,7 @@ wave3 {
 }
 
 #chk:checked~.login {
-  transform: translateY(-500px);
+  transform: translateY(-550px);
 }
 
 #chk:checked~.login label {
@@ -248,7 +248,7 @@ wave3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
 }
 
 .square .section-span1 {

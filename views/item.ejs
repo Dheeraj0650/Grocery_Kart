@@ -26,50 +26,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="../package/swiper-bundle.min.css">
-
-  <!-- Demo styles -->
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-    }
-
-
-
-    .swiper-container {
-      width: 100%;
-      height: 300px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .swiper-slide {
-      background-size: cover;
-      background-position: center;
-    }
-
-    .gallery-top {
-      height: 80%;
-      width: 100%;
-    }
-
-    .gallery-thumbs {
-      height: 20%;
-      box-sizing: border-box;
-      padding: 10px 0;
-    }
-
-    .gallery-thumbs .swiper-slide {
-      width: 25%;
-      height: 100%;
-      opacity: 0.4;
-    }
-
-    .gallery-thumbs .swiper-slide-thumb-active {
-      opacity: 1;
-    }
-  </style>
+  <link rel="stylesheet" href="css/item.css">
 </head>
 
 <body>
@@ -94,7 +51,7 @@
 
       <div class="col-lg-2" style="z-index:1;>
           <a href=" #" style="z-index:1;margin-top:2rem;"><button type="button" class="btn1 nav-btn"><i class="fas fa-shopping-cart " style="margin-right:10px"></i>Cart</button></a>
-          <a href=" #" style="z-index:1;margin-top:2rem;"><button type="button" class="btn1 nav-btn"><i class="fas fa-sign-out-alt" style="margin-right:10px"></i>logout</button></a>
+          <a href="/logout" style="z-index:1;margin-top:2rem;"><button type="button" class="btn1 nav-btn"><i class="fas fa-sign-out-alt" style="margin-right:10px"></i>logout</button></a>
 
       </div>
 
@@ -174,25 +131,22 @@
   </section>
 
   <section class="gallery-section">
-
-    <div class="container-fluid inner-container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-1 col-md-12 col-sm-12">
-
-          <a href="logo.jpeg" target="imgBox" class="thumb"><img src="logo.jpeg"></a>
-          <a href="wave.png" target="imgBox" class="thumb"><img src="wave.png"></a>
-          <a href="logo.jpeg" target="imgBox" class = "thumb"><img src="logo.jpeg"></a>
+        <div class="col-lg-1" style="margin-top:2rem">
+          <%for(let i = 0;i < product_details[0].images.length ;i++){%>
+            <a href = <%= product_details[0].images[i] %>  target="imgBox" class="thumb"><img src = <%= product_details[0].images[i] %> ></a>
+          <%}%>
 
         </div>
-        <div class="col-lg-6 col-md-12 col-sm-12" style = "text-align:center;justify-content:center;align-items:center">
-          <div class="imgBox">
-            <img src="logo.jpeg">
+        <div class="col-lg-4">
+          <div class="container imgBox">
+            <img src= <%= product_details[0].images[0] %> >
           </div>
         </div>
-        <div class="col-lg-5 col-md-12 col-sm-12">
+        <div class="col-lg-7">
 
         </div>
-
       </div>
       <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
       <script type="text/javascript" src="/javascripts/item.js">

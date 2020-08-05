@@ -74,7 +74,7 @@
 
         <div class="col-lg-2" style="z-index:1;>
           <a href=" #" style="z-index:1;margin-top:2rem;"><button type="button" class="btn1 nav-btn"><i class="fas fa-shopping-cart " style="margin-right:10px"></i>Cart</button></a>
-          <a href=" #" style="z-index:1;margin-top:2rem;"><button type="button" class="btn1 nav-btn"><i class="fas fa-sign-out-alt" style="margin-right:10px"></i>logout</button></a>
+          <a href="/logout" style="z-index:1;margin-top:2rem;"><button type="button" class="btn1 nav-btn"><i class="fas fa-sign-out-alt" style="margin-right:10px"></i>logout</button></a>
 
         </div>
 
@@ -170,7 +170,7 @@
 
     </section>
 
-    <%for(let i = 0; i < array.length  ;i++){ %>
+    <%for(let i = 0; i < 1  ;i++){ %>
 
     <section class="content_section">
       <div class="container-fluid">
@@ -179,24 +179,26 @@
             <div class="swiper-container">
               <h1 style="text-align:center;padding:2rem;margin-bottom:2rem;font-family: 'Lobster', cursive;color:#fbd46d;font-size:3.5rem;background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);"><%= array[i] %></h1>
               <div class="swiper-wrapper">
-                <%for(let j = 0; j < grocery_array[0].length;j++){ %>
+                <%for(let j = 0; j < grocery_array[i].length;j++){ %>
                 <div class="swiper-slide">
                   <div class="card">
                     <div class="circle">
-                      <h3><%= grocery_array[0][j].name %></h3>
+                      <h3><%= grocery_array[i][j].name %></h3>
+                      <!-- <%= console.log(grocery_array[i][j]); %> -->
                     </div>
                     <div class="content" style="text-align:center;opacity:1">
-                      <img src="<%= grocery_array[0][j].images[0]%>" alt="" width="240" style="object-fit:contain;height:16rem">
+                      <img src="<%= grocery_array[i][j].images[0]%>" alt="" width="240" style="object-fit:contain;height:16rem">
                     </div>
                     <div class="content">
-                      <a href="#" style="position:absolute;left:1rem;bottom:1.5rem">more</a>
+                      <form action="/item" method="post">
+                        <button name = "product_name" value = "<%= grocery_array[i][j].name %>#<%=i%>" type="submit" style="position:absolute;left:1rem;bottom:1.5rem">more</button>
+                      </form>
                       <span style="position:absolute;right:1rem;bottom:1.5rem">
-                        <h4 style="display:inline">₹<%= grocery_array[0][j].final_price%></h4> <del>
-                          <h5 style="display:inline">₹<%= grocery_array[0][j].Actual_price%></h5>
-                        </del><span style="color:green">&nbsp <%= grocery_array[0][j].discount%>% off</span>
+                        <h4 style="display:inline">₹<%= grocery_array[i][j].final_price%></h4> <del>
+                          <h5 style="display:inline">₹<%= grocery_array[i][j].Actual_price%></h5>
+                        </del><span style="color:green">&nbsp <%= grocery_array[i][j].discount%>% off</span>
                       </span>
                     </div>
-
                   </div>
                 </div>
                 <% } %>
