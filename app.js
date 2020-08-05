@@ -198,11 +198,11 @@ app.get('/auth/google',
 
 app.get('/auth/google/Grocery_Kart',
   passport.authenticate('google', {
-    failureRedirect: '/'
+    failureRedirect: __dirname + "/"
   }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/main');
+    res.redirect(__dirname + "/main");
   });
 
 app.get('/auth/github',
@@ -210,11 +210,11 @@ app.get('/auth/github',
 
 app.get('/auth/github/Grocery_Kart',
   passport.authenticate('github', {
-    failureRedirect: '/'
+    failureRedirect: __dirname + "/"
   }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/main');
+    res.redirect(__dirname + '/main');
   });
 
 
@@ -235,7 +235,7 @@ app.get('/auth/outlook/Grocery_Kart',
   }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/main');
+    res.redirect(__dirname + "/main");
   });
 
 
@@ -268,7 +268,7 @@ var array_collections = [
   []
 ];
 var array_name = [Staples];
-app.get("/main", function(req, res) {
+app.get(__dirname + "/main", function(req, res) {
 
   var grocery = [];
   if (req.isAuthenticated()) {
