@@ -33,6 +33,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "14.5.0"
+  },
   "bugs": {
     "url": "https://github.com/Dheeraj0650/Grocery_Kart/issues"
   },
