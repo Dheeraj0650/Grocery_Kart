@@ -344,7 +344,7 @@ app.post(__dirname + "/login", function(req, res) {
 
 app.get(__dirname + "/logout", function(req, res) {
   req.logout();
-  res.redirect("/");
+  res.redirect(__dirname + "/");
 });
 
 app.post(__dirname + "/item", function(req, res) {
