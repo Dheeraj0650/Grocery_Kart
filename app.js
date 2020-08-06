@@ -349,7 +349,6 @@ app.post("/product", function(req, res) {
   });
 
 });
-xs
 app.get("/logout", function(req, res) {
   req.logout();
   res.redirect("/");
