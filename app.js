@@ -140,44 +140,44 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-// passport.use(new GitHubStrategy({
-//     clientID: process.env.GITHUB_CLIENT_ID,
-//     clientSecret: process.env.GITHUB_CLIENT_SECRETS,
-//     callbackURL: "http://localhost:3000/auth/github/Grocery_Kart",
-//   },
-//   function(accessToken, refreshToken, profile, cb) {
-//     User.findOrCreate({
-//       githubId: profile.id
-//     }, function(err, user) {
-//       return cb(err, user);
-//     });
-//   }
-// ));
-//
-// passport.use(new OutlookStrategy({
-//     clientID: process.env.OUTLOOK_CLIENT_ID,
-//     clientSecret: process.env.OUTLOOK_CLIENT_SECRETS,
-//     callbackURL: "http://localhost:3000/auth/outlook/Grocery_Kart",
-//   },
-//   function(accessToken, refreshToken, profile, done) {
-//     var user = {
-//       outlookId: profile.id,
-//       name: profile.DisplayName,
-//       email: profile.EmailAddress,
-//       accessToken: accessToken
-//     };
-//     if (refreshToken)
-//       user.refreshToken = refreshToken;
-//     if (profile.MailboxGuid)
-//       user.mailboxGuid = profile.MailboxGuid;
-//     if (profile.Alias)
-//       user.alias = profile.Alias;
-//     User.findOrCreate(user, function(err, user) {
-//       return done(err, user);
-//     });
-//   }
-// ));
-//
+passport.use(new GitHubStrategy({
+    clientID: process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRETS,
+    callbackURL: "https://evening-castle-96428.herokuapp.com/auth/github/Grocery_Kart",
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({
+      githubId: profile.id
+    }, function(err, user) {
+      return cb(err, user);
+    });
+  }
+));
+
+passport.use(new OutlookStrategy({
+    clientID: process.env.OUTLOOK_CLIENT_ID,
+    clientSecret: process.env.OUTLOOK_CLIENT_SECRETS,
+    callbackURL: "https://evening-castle-96428.herokuapp.com/auth/outlook/Grocery_Kart",
+  },
+  function(accessToken, refreshToken, profile, done) {
+    var user = {
+      outlookId: profile.id,
+      name: profile.DisplayName,
+      email: profile.EmailAddress,
+      accessToken: accessToken
+    };
+    if (refreshToken)
+      user.refreshToken = refreshToken;
+    if (profile.MailboxGuid)
+      user.mailboxGuid = profile.MailboxGuid;
+    if (profile.Alias)
+      user.alias = profile.Alias;
+    User.findOrCreate(user, function(err, user) {
+      return done(err, user);
+    });
+  }
+));
+
 
 app.get("/", function(req, res) {
   // Oil.find({name : {$regex : new RegExp("nut", "i")}},function(err,values){
@@ -205,38 +205,38 @@ app.get('/auth/google/Grocery_Kart',
     res.redirect("/main");
   });
 
-// app.get('/auth/github',
-//   passport.authenticate('github'));
-//
-// app.get('/auth/github/Grocery_Kart',
-//   passport.authenticate('github', {
-//     failureRedirect: __dirname + "/"
-//   }),
-//   function(req, res) {
-//     // Successful authentication, redirect home.
-//     res.redirect(__dirname + '/main');
-//   });
-//
-//
-// app.get('/auth/outlook',
-//   passport.authenticate('windowslive', {
-//     scope: [
-//       'openid',
-//       'profile',
-//       'offline_access',
-//       'https://outlook.office.com/Mail.Read'
-//     ]
-//   })
-// );
-//
-// app.get('/auth/outlook/Grocery_Kart',
-//   passport.authenticate('windowslive', {
-//     failureRedirect: __dirname + "/"
-//   }),
-//   function(req, res) {
-//     // Successful authentication, redirect home.
-//     res.redirect(__dirname + "/main");
-//   });
+app.get('/auth/github',
+  passport.authenticate('github'));
+
+app.get('/auth/github/Grocery_Kart',
+  passport.authenticate('github', {
+    failureRedirect: "/"
+  }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/main');
+  });
+
+
+app.get('/auth/outlook',
+  passport.authenticate('windowslive', {
+    scope: [
+      'openid',
+      'profile',
+      'offline_access',
+      'https://outlook.office.com/Mail.Read'
+    ]
+  })
+);
+
+app.get('/auth/outlook/Grocery_Kart',
+  passport.authenticate('windowslive', {
+    failureRedirect: "/"
+  }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect("/main");
+  });
 
 
 app.post("/register", function(req, res) {
@@ -312,6 +312,17 @@ app.post("/login", function(req, res) {
     }
   });
 
+  app.get("/product",function(req,res){
+    res.redirect("/main");
+  });
+
+  app.get("/product",function(req,res){
+    res.redirect("/main");
+  });
+
+  app.get("/item",function(req,res){
+    res.redirect("/main");
+  });
 
   app.post("/product", function(req, res) {
     Shampoo.find(function(err, values) {
