@@ -239,7 +239,7 @@ app.get("/", function(req, res) {
 //   });
 
 
-app.post(__dirname + "/register", function(req, res) {
+app.post("/register", function(req, res) {
 
   User.register({
     username: req.body.username
@@ -249,7 +249,7 @@ app.post(__dirname + "/register", function(req, res) {
     } else {
       passport.authenticate("local")(req, res, function() {
         console.log("hello");
-        res.redirect(__dirname + "/main");
+        res.redirect("/main");
       });
     }
   });
@@ -268,7 +268,7 @@ var array_collections = [
   []
 ];
 var array_name = [Staples];
-app.get(__dirname + "/main", function(req, res) {
+app.get("/main", function(req, res) {
 
   var grocery = [];
   if (req.isAuthenticated()) {
@@ -292,11 +292,11 @@ app.get(__dirname + "/main", function(req, res) {
 
 
   } else {
-    res.redirect(__dirname + "/");
+    res.redirect("/");
   }
 });
 
-app.post(__dirname + "/login", function(req, res) {
+app.post("/login", function(req, res) {
   const user = new User({
     username: req.body.username,
     password: req.body.password
@@ -307,13 +307,13 @@ app.post(__dirname + "/login", function(req, res) {
 
     } else {
       passport.authenticate("local")(req, res, function() {
-        res.redirect(__dirname + "/main");
+        res.redirect("/main");
       });
     }
   });
 
 
-  app.post(__dirname + "/product", function(req, res) {
+  app.post("/product", function(req, res) {
     Shampoo.find(function(err, values) {
       res.render("product", {
         grocery_array: values
@@ -342,12 +342,12 @@ app.post(__dirname + "/login", function(req, res) {
 
 });
 
-app.get(__dirname + "/logout", function(req, res) {
+app.get("/logout", function(req, res) {
   req.logout();
-  res.redirect(__dirname + "/");
+  res.redirect("/");
 });
 
-app.post(__dirname + "/item", function(req, res) {
+app.post("/item", function(req, res) {
   console.log(req.body.product_name);
   var body = req.body.product_name.split("#");
   array_name[Number(body[1])].find({
