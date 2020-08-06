@@ -320,14 +320,6 @@ app.post("/login", function(req, res) {
   //   res.redirect("/main");
   // });
 
-  app.post("/product", function(req, res) {
-    Shampoo.find(function(err, values) {
-      res.render("product", {
-        grocery_array: values
-      });
-    });
-
-  });
 
 
 
@@ -349,6 +341,15 @@ app.post("/login", function(req, res) {
 
 });
 
+app.post("/product", function(req, res) {
+  Shampoo.find(function(err, values) {
+    res.render("product", {
+      grocery_array: values
+    });
+  });
+
+});
+xs
 app.get("/logout", function(req, res) {
   req.logout();
   res.redirect("/");
