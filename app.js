@@ -311,14 +311,14 @@ app.post("/login", function(req, res) {
       });
     }
   });
-
-  app.get("/product",function(req,res){
-    res.redirect("/main");
-  });
-
-  app.get("/item",function(req,res){
-    res.redirect("/main");
-  });
+  // 
+  // app.get("/product",function(req,res){
+  //   res.redirect("/main");
+  // });
+  //
+  // app.get("/item",function(req,res){
+  //   res.redirect("/main");
+  // });
 
   app.post("/product", function(req, res) {
     Shampoo.find(function(err, values) {
