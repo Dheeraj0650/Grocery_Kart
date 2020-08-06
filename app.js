@@ -127,7 +127,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRETS,
-    callbackURL: "https://evening-castle-96428.herokuapp.com/auth/google/Grocery_Kart",
+    callbackURL: "https://limitless-cove-52361.herokuapp.com/auth/google/Grocery_Kart",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -143,7 +143,7 @@ passport.use(new GoogleStrategy({
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRETS,
-    callbackURL: "https://evening-castle-96428.herokuapp.com/auth/github/Grocery_Kart",
+    callbackURL: "https://limitless-cove-52361.herokuapp.com/auth/github/Grocery_Kart",
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({
@@ -157,7 +157,7 @@ passport.use(new GitHubStrategy({
 passport.use(new OutlookStrategy({
     clientID: process.env.OUTLOOK_CLIENT_ID,
     clientSecret: process.env.OUTLOOK_CLIENT_SECRETS,
-    callbackURL: "https://evening-castle-96428.herokuapp.com/auth/outlook/Grocery_Kart",
+    callbackURL: "https://limitless-cove-52361.herokuapp.com/auth/outlook/Grocery_Kart",
   },
   function(accessToken, refreshToken, profile, done) {
     var user = {
@@ -288,7 +288,7 @@ app.get("/main", function(req, res) {
         grocery_array: grocery,
         array_collections: array_collections
       });
-    }, 7000);
+    }, 3000);
 
 
   } else {
