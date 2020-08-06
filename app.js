@@ -311,7 +311,7 @@ app.post("/login", function(req, res) {
       });
     }
   });
-  // 
+  //
   // app.get("/product",function(req,res){
   //   res.redirect("/main");
   // });
@@ -365,6 +365,10 @@ app.post("/item", function(req, res) {
     });
   });
 
+});
+
+app.get("/payment",function(req,res){
+  res.render("payment");
 });
 
 let port = process.env.PORT;
