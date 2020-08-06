@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/all.min.css" />
   <link rel="stylesheet" href="css/fontawesome.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Piedra&family=Righteous&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
@@ -135,26 +135,26 @@
   </section>
 
   <section class="gallery-section">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-1" style="margin-top:2rem">
+    <div class="container-fluid" style="background-color:white">
+      <div class="row" >
+        <div class="col-lg-2" style="margin-top:2rem;background-color:white;text-align:center" >
           <%for(let i = 0;i < product_details[0].images.length ;i++){%>
-          <a href=<%= product_details[0].images[i] %> target="imgBox" class="thumb"><img src=<%= product_details[0].images[i] %>></a>
+          <a href=<%= product_details[0].images[i] %> target="imgBox" class="thumb" style = "border:0.2rem solid #93b5e1"><img src=<%= product_details[0].images[i] %> ></a>
           <%}%>
 
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4" style="background-color:white">
           <div class="container imgBox">
             <img src= <%= product_details[0].images[0] %> >
         </div>
       </div>
-      <div class="col-lg-7">
-        <div class="ooJZfD _2oZ8XT col-8-12" style="padding:0px 0px 0px 24px">
+      <div class="col-lg-6" style="background-color:#ffe4e4;padding-top:2rem">
+        <div  style="padding:0px 0px 0px 24px">
 
           <div class="_3gijNv col-12-12">
             <div class="_29OxBi">
               <div>
-                <h1 class="_9E25nV"><span class="_35KyD6"><b><%= product_details[0].name %></b>
+                <h1 class="_9E25n"><span class="5KyD6" style="font-family: 'Sora', sans-serif;"><b><%= product_details[0].name %></b>
                     <!-- -->&nbsp;&nbsp;</span></h1>
               </div>
               <div class="_2XDAh9"><span>Special price</span></div>
