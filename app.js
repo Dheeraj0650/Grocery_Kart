@@ -198,11 +198,11 @@ app.get('/auth/google',
 
 app.get('/auth/google/Grocery_Kart',
   passport.authenticate('google', {
-    failureRedirect: __dirname + "/"
+    failureRedirect: "/"
   }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect(__dirname + "/main");
+    res.redirect("/main");
   });
 
 // app.get('/auth/github',
