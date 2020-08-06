@@ -179,7 +179,7 @@ passport.deserializeUser(function(id, done) {
 // ));
 //
 
-app.get(__dirname + "/", function(req, res) {
+app.get("/", function(req, res) {
   // Oil.find({name : {$regex : new RegExp("nut", "i")}},function(err,values){
   //   console.log(values);
   // });
