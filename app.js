@@ -316,10 +316,6 @@ app.post("/login", function(req, res) {
     res.redirect("/main");
   });
 
-  app.get("/product",function(req,res){
-    res.redirect("/main");
-  });
-
   app.get("/item",function(req,res){
     res.redirect("/main");
   });
