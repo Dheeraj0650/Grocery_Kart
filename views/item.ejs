@@ -154,17 +154,17 @@
           <div class="_3gijNv col-12-12">
             <div class="_29OxBi">
               <div>
-                <h1 class="_9E25nV"><span class="_35KyD6">Freedom Refined Sunflower Oil Pouch
-                    <!-- -->&nbsp;&nbsp;(500 ml)</span></h1>
+                <h1 class="_9E25nV"><span class="_35KyD6"><b><%= product_details[0].name %></b>
+                    <!-- -->&nbsp;&nbsp;</span></h1>
               </div>
               <div class="_2XDAh9"><span>Special price</span></div>
               <div class="_3iZgFn">
                 <div class="_2i1QSc">
                   <div class="_1uv9Cb">
-                    <div class="_1vC4OE _3qQ9m1">₹1</div>
+                    <div class="_1vC4OE _3qQ9m1">₹<%=product_details[0].final_price%></div>
                     <div class="_3auQ3N _1POkHg">₹
-                      <!-- -->70</div>
-                    <div class="VGWI6T _1iCvwn"><span>98% off</span></div>
+                      <!-- --><%=product_details[0].Actual_price%></div>
+                    <div class="VGWI6T _1iCvwn"><span><%=product_details[0].discount%>% off</span></div>
                   </div>
                 </div>
 
@@ -282,8 +282,9 @@
                 <div class="_2hqjdd">Highlights</div>
                 <div class="_3WHvuP">
                   <ul>
-                    <li class="_2-riNZ">Used For: Cooking</li>
-                    <li class="_2-riNZ">Processing Type: Refined</li>
+                    <% for(let i = 0; i < product_details[0].Highlights.length;i++) {%>
+                    <li class="_2-riNZ">product_details[0].Highlights[i]</li>
+                    <%}%>
                   </ul>
                 </div>
               </div>
