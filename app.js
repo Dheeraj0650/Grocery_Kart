@@ -14,7 +14,7 @@ const OutlookStrategy = require('passport-outlook')
 const app = express();
 // app.use("view engine","ejs");
 
-app.use(express.static(__dirname+'public'));
+app.use(express.static(__dirname+"public"));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
   extended: true
@@ -364,8 +364,6 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8000;
 }
-app.listen(port);
-
 app.listen(port, function() {
   console.log("connected");
 });
