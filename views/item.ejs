@@ -346,15 +346,17 @@
                       <div class="_2lzn0o">In The Box</div>
                       <table class="_3ENrHu">
                         <tbody>
+                          <%for(let i = 0;i < product_details[0].Specifications.length;i++){%>
                           <tr class="_3_6Uyw row">
-                            <td class="_3-wDH3 col col-3-12">Brand</td>
+                            <td class="_3-wDH3 col col-3-12"><%=product_details[0].Specifications[i][0]%></td>
                             <td class="_2k4JXJ col col-9-12">
                               <ul>
-                                <li class="_3YhLQA">Freedom</li>
+                                <li class="_3YhLQA"><%=product_details[0].Specifications[i][1]%></li>
                               </ul>
                             </td>
                           </tr>
-                          <tr class="_3_6Uyw row">
+                          <% } %>
+                          <!-- <tr class="_3_6Uyw row">
                             <td class="_3-wDH3 col col-3-12">Model Name</td>
                             <td class="_2k4JXJ col col-9-12">
                               <ul>
@@ -433,7 +435,7 @@
                                 <li class="_3YhLQA">No</li>
                               </ul>
                             </td>
-                          </tr>
+                          </tr> -->
                         </tbody>
                       </table>
                     </div>
@@ -454,7 +456,6 @@
                       </table>
                     </div>
                   </div>
-                  <div class="_39XK9P">Manufacturing, Packaging and Import Info</div>
                 </div>
               </div>
             </div>
