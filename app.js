@@ -124,22 +124,22 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
-// passport.use(new GoogleStrategy({
-//     clientID: process.env.CLIENT_ID,
-//     clientSecret: process.env.CLIENT_SECRETS,
-//     callbackURL: "http://localhost:3000/auth/google/Grocery_Kart",
-//     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
-//   },
-//   function(accessToken, refreshToken, profile, cb) {
-//     console.log(profile);
-//     User.findOrCreate({
-//       googleId: profile.id
-//     }, function(err, user) {
-//       return cb(err, user);
-//     });
-//   }
-// ));
-//
+passport.use(new GoogleStrategy({
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRETS,
+    callbackURL: "https://evening-castle-96428.herokuapp.com/auth/google/Grocery_Kart",
+    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    console.log(profile);
+    User.findOrCreate({
+      googleId: profile.id
+    }, function(err, user) {
+      return cb(err, user);
+    });
+  }
+));
+
 // passport.use(new GitHubStrategy({
 //     clientID: process.env.GITHUB_CLIENT_ID,
 //     clientSecret: process.env.GITHUB_CLIENT_SECRETS,
@@ -189,22 +189,22 @@ app.get("/", function(req, res) {
 
 
 
-// app.get('/auth/google',
-//   passport.authenticate('google', {
-//       scope: ['profile']
-//     }
-//
-//   ));
-//
-// app.get('/auth/google/Grocery_Kart',
-//   passport.authenticate('google', {
-//     failureRedirect: __dirname + "/"
-//   }),
-//   function(req, res) {
-//     // Successful authentication, redirect home.
-//     res.redirect(__dirname + "/main");
-//   });
-//
+app.get('/auth/google',
+  passport.authenticate('google', {
+      scope: ['profile']
+    }
+
+  ));
+
+app.get('/auth/google/Grocery_Kart',
+  passport.authenticate('google', {
+    failureRedirect: __dirname + "/"
+  }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect(__dirname + "/main");
+  });
+
 // app.get('/auth/github',
 //   passport.authenticate('github'));
 //
