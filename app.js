@@ -124,60 +124,60 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
-passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRETS,
-    callbackURL: "http://localhost:3000/auth/google/Grocery_Kart",
-    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
-    User.findOrCreate({
-      googleId: profile.id
-    }, function(err, user) {
-      return cb(err, user);
-    });
-  }
-));
-
-passport.use(new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRETS,
-    callbackURL: "http://localhost:3000/auth/github/Grocery_Kart",
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({
-      githubId: profile.id
-    }, function(err, user) {
-      return cb(err, user);
-    });
-  }
-));
-
-passport.use(new OutlookStrategy({
-    clientID: process.env.OUTLOOK_CLIENT_ID,
-    clientSecret: process.env.OUTLOOK_CLIENT_SECRETS,
-    callbackURL: "http://localhost:3000/auth/outlook/Grocery_Kart",
-  },
-  function(accessToken, refreshToken, profile, done) {
-    var user = {
-      outlookId: profile.id,
-      name: profile.DisplayName,
-      email: profile.EmailAddress,
-      accessToken: accessToken
-    };
-    if (refreshToken)
-      user.refreshToken = refreshToken;
-    if (profile.MailboxGuid)
-      user.mailboxGuid = profile.MailboxGuid;
-    if (profile.Alias)
-      user.alias = profile.Alias;
-    User.findOrCreate(user, function(err, user) {
-      return done(err, user);
-    });
-  }
-));
-
+// passport.use(new GoogleStrategy({
+//     clientID: process.env.CLIENT_ID,
+//     clientSecret: process.env.CLIENT_SECRETS,
+//     callbackURL: "http://localhost:3000/auth/google/Grocery_Kart",
+//     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+//   },
+//   function(accessToken, refreshToken, profile, cb) {
+//     console.log(profile);
+//     User.findOrCreate({
+//       googleId: profile.id
+//     }, function(err, user) {
+//       return cb(err, user);
+//     });
+//   }
+// ));
+//
+// passport.use(new GitHubStrategy({
+//     clientID: process.env.GITHUB_CLIENT_ID,
+//     clientSecret: process.env.GITHUB_CLIENT_SECRETS,
+//     callbackURL: "http://localhost:3000/auth/github/Grocery_Kart",
+//   },
+//   function(accessToken, refreshToken, profile, cb) {
+//     User.findOrCreate({
+//       githubId: profile.id
+//     }, function(err, user) {
+//       return cb(err, user);
+//     });
+//   }
+// ));
+//
+// passport.use(new OutlookStrategy({
+//     clientID: process.env.OUTLOOK_CLIENT_ID,
+//     clientSecret: process.env.OUTLOOK_CLIENT_SECRETS,
+//     callbackURL: "http://localhost:3000/auth/outlook/Grocery_Kart",
+//   },
+//   function(accessToken, refreshToken, profile, done) {
+//     var user = {
+//       outlookId: profile.id,
+//       name: profile.DisplayName,
+//       email: profile.EmailAddress,
+//       accessToken: accessToken
+//     };
+//     if (refreshToken)
+//       user.refreshToken = refreshToken;
+//     if (profile.MailboxGuid)
+//       user.mailboxGuid = profile.MailboxGuid;
+//     if (profile.Alias)
+//       user.alias = profile.Alias;
+//     User.findOrCreate(user, function(err, user) {
+//       return done(err, user);
+//     });
+//   }
+// ));
+//
 
 app.get(__dirname + "/", function(req, res) {
   // Oil.find({name : {$regex : new RegExp("nut", "i")}},function(err,values){
@@ -189,54 +189,54 @@ app.get(__dirname + "/", function(req, res) {
 
 
 
-app.get('/auth/google',
-  passport.authenticate('google', {
-      scope: ['profile']
-    }
-
-  ));
-
-app.get('/auth/google/Grocery_Kart',
-  passport.authenticate('google', {
-    failureRedirect: __dirname + "/"
-  }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect(__dirname + "/main");
-  });
-
-app.get('/auth/github',
-  passport.authenticate('github'));
-
-app.get('/auth/github/Grocery_Kart',
-  passport.authenticate('github', {
-    failureRedirect: __dirname + "/"
-  }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect(__dirname + '/main');
-  });
-
-
-app.get('/auth/outlook',
-  passport.authenticate('windowslive', {
-    scope: [
-      'openid',
-      'profile',
-      'offline_access',
-      'https://outlook.office.com/Mail.Read'
-    ]
-  })
-);
-
-app.get('/auth/outlook/Grocery_Kart',
-  passport.authenticate('windowslive', {
-    failureRedirect: __dirname + "/"
-  }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect(__dirname + "/main");
-  });
+// app.get('/auth/google',
+//   passport.authenticate('google', {
+//       scope: ['profile']
+//     }
+//
+//   ));
+//
+// app.get('/auth/google/Grocery_Kart',
+//   passport.authenticate('google', {
+//     failureRedirect: __dirname + "/"
+//   }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect(__dirname + "/main");
+//   });
+//
+// app.get('/auth/github',
+//   passport.authenticate('github'));
+//
+// app.get('/auth/github/Grocery_Kart',
+//   passport.authenticate('github', {
+//     failureRedirect: __dirname + "/"
+//   }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect(__dirname + '/main');
+//   });
+//
+//
+// app.get('/auth/outlook',
+//   passport.authenticate('windowslive', {
+//     scope: [
+//       'openid',
+//       'profile',
+//       'offline_access',
+//       'https://outlook.office.com/Mail.Read'
+//     ]
+//   })
+// );
+//
+// app.get('/auth/outlook/Grocery_Kart',
+//   passport.authenticate('windowslive', {
+//     failureRedirect: __dirname + "/"
+//   }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect(__dirname + "/main");
+//   });
 
 
 app.post(__dirname + "/register", function(req, res) {
