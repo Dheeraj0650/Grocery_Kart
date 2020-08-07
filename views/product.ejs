@@ -65,9 +65,18 @@
               Staples
             </button>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <form action="/product" id = "item" method="post">
+                <button class="dropdown-item" name = "name" value="Dal#0" type="submit">Dals</button>
+                <button class="dropdown-item" name = "name" value="Oil#0" type="submit">Oils</button>
+                <button class="dropdown-item" name = "name" value="Flour#0" type="submit">Flours</button>
+                <button class="dropdown-item" name = "name" value="Soya#0" type="submit">Soya</button>
+                <button class="dropdown-item" name = "name" value="Ghee#0" type="submit">Ghee</button>
+                <button class="dropdown-item" name = "name" value="Spices#0" type="submit">Spices</button>
+                <button class="dropdown-item" name = "name" value="Masala#0" type="submit">Masalas</button>
+                <button class="dropdown-item" name = "name" value="Rice#0" type="submit">Rice</button>
+                <button class="dropdown-item" name = "name" value="Groundnut#0" type="submit">Groundnut</button>
+                <button class="dropdown-item" name = "name" value="Atta#0" type="submit">Atta</button>
+              </form>
             </div>
           </li>
           <li class="nav-item dropdown" style="padding-right:1rem;">
@@ -310,7 +319,7 @@
               </div>
               <div class="content">
                 <form action="/item" method="post">
-                  <button name = "product_name" value = "<%= grocery_array[i].name %>" type="submit" style="position:absolute;left:1rem;bottom:1.5rem">more</button>
+                  <button name = "product_name" value = "<%= grocery_array[i].name %>#<%=category%>" type="submit" style="position:absolute;left:1rem;bottom:1.5rem">more</button>
                 </form>
                 <span style="position:absolute;right:1rem;bottom:1.5rem">
                   <h4 style="display:inline">₹<%= grocery_array[i].final_price%></h4> <del>

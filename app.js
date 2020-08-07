@@ -257,7 +257,17 @@ app.post("/register", function(req, res) {
 
 
 });
-
+var objects_array = {
+  "Dal":Dal,
+  "Shampoo":Shampoo,
+  "Conditioner":Conditioner,
+  "Peanut":Peanut,
+  "Groundnut":Groundnut,
+  "Soya":Soya,
+  "Oil":Oil,
+  "Ghee":Ghee
+};
+var main_array = [Staples];
 var array = ['Staples', 'Snacks & Beverages', 'Packaged Food', 'Personal & Baby Care', 'Household Care', 'Dairy & Eggs'];
 var array_collections = [
   [Dal, Peanut, Groundnut, Soya, Oil, Ghee],
@@ -342,16 +352,29 @@ app.post("/login", function(req, res) {
 });
 
 app.post("/product", function(req, res) {
-  Shampoo.find(function(err, values) {
-    res.render("product", {
-      grocery_array: values
-    });
+  // var products = req.body.name;
+  // console.log(products);
+  var body = req.body.name.split("#");
+  // objects_array[products].find(function(err, values) {
+  //   res.render("product", {
+  //     grocery_array: values
+  //   });
+  // });
+  main_array[Number(body[1])].find({name : {$regex : new RegExp(body[0], "i")}},function(err,values){
+      res.render("product", {
+        grocery_array: values,
+        category:body[1]
+      });
   });
 
 });
 app.get("/logout", function(req, res) {
   req.logout();
   res.redirect("/");
+});
+
+app.post("/product_item",function(req,res){
+
 });
 
 app.post("/item", function(req, res) {
@@ -373,8 +396,8 @@ app.get("/payment",function(req,res){
 
 let port = process.env.PORT;
 if (port == null || port == "") {
-  port = 8000;
+  port = 3000;
 }
-app.listen(port, function() {
+app.listen(3000, function() {
   console.log("connected");
 });
