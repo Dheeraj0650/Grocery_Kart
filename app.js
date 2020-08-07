@@ -38,9 +38,8 @@ mongoose.set("useCreateIndex", true);
 mongoose.connection.on('open', function() {
   console.log('Connected to mongo server.');
   //trying to get collection names
-  console.log("hi");
   mongoose.connection.db.listCollections().toArray(function(err, names) {
-    console.log(names); // [{ name: 'dbname.myCollection' }]
+ // [{ name: 'dbname.myCollection' }]
     module.exports.Collection = names;
   });
 });
@@ -131,8 +130,7 @@ passport.use(new GoogleStrategy({
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
   function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
-    User.findOrCreate({
+      User.findOrCreate({
       googleId: profile.id
     }, function(err, user) {
       return cb(err, user);
@@ -245,10 +243,10 @@ app.post("/register", function(req, res) {
     username: req.body.username
   }, req.body.password, function(err, user) {
     if (err) {
-      console.log(err);
+      // console.log(err);
     } else {
       passport.authenticate("local")(req, res, function() {
-        console.log("hello");
+        // console.log("hello");
         res.redirect("/main");
       });
     }
@@ -283,11 +281,11 @@ app.get("/main", function(req, res) {
   var grocery = [];
   if (req.isAuthenticated()) {
     for (let i = 0; i < 1; i++) {
-      array_name[i].find(function(err, shampoos) {
+      array_name[i].find({discount: {$gte:25}},function(err, value) {
         if (err) {
 
         } else {
-          grocery.push(shampoos);
+          grocery.push(value);
         }
       });
     }
@@ -298,7 +296,7 @@ app.get("/main", function(req, res) {
         grocery_array: grocery,
         array_collections: array_collections
       });
-    }, 3000);
+    }, 1000);
 
 
   } else {
@@ -378,7 +376,7 @@ app.post("/product_item",function(req,res){
 });
 
 app.post("/item", function(req, res) {
-  console.log(req.body.product_name);
+  // console.log(req.body.product_name);
   var body = req.body.product_name.split("#");
   array_name[Number(body[1])].find({
     name: body[0]

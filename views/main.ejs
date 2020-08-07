@@ -81,6 +81,7 @@
 
 
       </div>
+
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #36096d;text-align:center;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="background-color:white">
           <span class="navbar-toggler-icon"></span>
@@ -91,10 +92,10 @@
               <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
                 Staples
               </button>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab">
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" style="background-color:#feceab;">
                 <form action="/product" id = "item" method="post">
                   <button class="dropdown-item" name = "name" value="Dal#0" type="submit">Dals</button>
-                  <button class="dropdown-item" name = "name" value="Oil#0" type="submit">Oils</button>
+                  <button class="dropdown-item" name = "name" value="Oil#0" type="submit" >Oils</button>
                   <button class="dropdown-item" name = "name" value="Flour#0" type="submit">Flours</button>
                   <button class="dropdown-item" name = "name" value="Soya#0" type="submit">Soya</button>
                   <button class="dropdown-item" name = "name" value="Ghee#0" type="submit">Ghee</button>
@@ -192,7 +193,7 @@
                   <div class="card">
                     <div class="circle">
                       <h3><%= grocery_array[i][j].name %></h3>
-                      <!-- <%= console.log(grocery_array[i][j]); %> -->
+
                     </div>
                     <div class="content" style="text-align:center;opacity:1">
                       <img src="<%= grocery_array[i][j].images[0]%>" alt="" width="240" style="object-fit:contain;height:16rem">

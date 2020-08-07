@@ -7,6 +7,10 @@ var swiper = new Swiper('.swiper-container', {
   //   delay: 2500,
   //   disableOnInteraction: false,
   // },
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
   coverflowEffect: {
     rotate: 20,
     stretch: 0,
@@ -19,4 +23,6 @@ var swiper = new Swiper('.swiper-container', {
   pagination: {
     el: '.swiper-pagination',
   },
+  
+
 });
