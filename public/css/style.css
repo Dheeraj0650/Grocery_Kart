@@ -132,6 +132,7 @@ wave3 {
 
 .section-container {
   margin: 0;
+  padding:15% 5%;
   display: flex;
   justify-content: center;
   align-items: center;
