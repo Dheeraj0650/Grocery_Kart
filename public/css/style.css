@@ -244,12 +244,13 @@ wave3 {
 }
 
 .square {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  text-align: center;
 
 }
 
