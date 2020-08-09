@@ -249,6 +249,7 @@ wave3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 
 }
 
@@ -257,8 +258,8 @@ wave3 {
   align-items: center;
   top: 0;
   left: 0;
-  width: 26rem;
-  height: 26rem;
+  width: 23rem;
+  height: 23rem;
   border: 2px solid white;
   border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
   transition: 0.5s;
@@ -276,8 +277,8 @@ wave3 {
   align-items: center;
   top: 0;
   left: 0;
-  width: 26rem;
-  height: 26rem;
+  width: 23rem;
+  height: 23rem;
   border: 2px solid white;
   border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
   transition: 0.5s;
@@ -294,8 +295,8 @@ wave3 {
   align-items: center;
   top: 0;
   left: 0;
-  width: 26rem;
-  height: 26rem;
+  width: 23rem;
+  height: 23rem;
   border: 2px solid white;
   border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
   transition: 0.5s;
@@ -317,25 +318,42 @@ wave3 {
   }
 }
 
-.content{
+.content1 {
   /* padding:10rem 2rem; */
   color:#fff;
-  text-align: center;
+
   transition: 0.5s;
   z-index: 1;
+}
+.content2{
+  color:#fff;
+  transition: 0.5s;
+  z-index: 1;
+}
+.content1 h2{
+  /* padding:10rem 2rem; */
+  position: absolute;
+  top:6rem;
+  right: 11rem;
+}
+.content2 h2{
+  /* padding:10rem 2rem; */
+  position: absolute;
+  top:6rem;
+  right: 8rem;
 }
 
 .view_button{
   border: 1px solid white;
   background: none;
-  padding: 0.4rem 1.4rem;
   font-size: 1.2rem;
   font-family: 'Noto Sans JP', sans-serif;
   cursor: pointer;
-  margin: 10px;
   transition: 0.8s;
-  position: relative;
   overflow: hidden;
     border-radius: 2rem;
+    position: absolute;
+    bottom: 6rem;
+    left:9.5rem;
   color:white;
 }
