@@ -43,7 +43,7 @@
   transition: 0.5s;
 }
 .social-menu a{
-  margin-left: 4rem;
+  margin: auto;
   transition: 0.5s;
   box-shadow: 6px 8px 8px black;
 }
