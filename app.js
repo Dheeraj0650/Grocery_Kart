@@ -14,7 +14,7 @@ const OutlookStrategy = require('passport-outlook')
 const app = express();
 // app.use("view engine","ejs");
 
-app.use(express.static(__dirname+"/public"));
+app.use(express.static(__dirname + "/public"));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
   extended: true
@@ -39,7 +39,7 @@ mongoose.connection.on('open', function() {
   console.log('Connected to mongo server.');
   //trying to get collection names
   mongoose.connection.db.listCollections().toArray(function(err, names) {
- // [{ name: 'dbname.myCollection' }]
+    // [{ name: 'dbname.myCollection' }]
     module.exports.Collection = names;
   });
 });
@@ -107,11 +107,48 @@ const Soya = mongoose.model("Soya", GrocerySchema);
 const Oil = mongoose.model("Oil", GrocerySchema);
 const Ghee = mongoose.model("Ghee", GrocerySchema);
 const Staples = mongoose.model("Staples", GrocerySchema);
+const Care = mongoose.model("Care", GrocerySchema);
 
+const care1 = new Care({
+  name: "NIVEA Creme  (60 ml)",
+  Actual_price: 99,
+  discount: 15,
+  final_price: 84,
+  count: 10,
+  quantity: ["60ml @140/100ml"],
+  Highlights: ["Application Area: Body", "For Women", "All Day Cream", "For All Skin Types", "Cream Form"],
+  description: `Dry, oily or combination skin - with this Nivea Creme, you can pamper your skin and give it all the nourishment it requires.
+
+Moisturizer for All Seasons
+
+Don't let the change in the weather affect your skin. With this Nivea Cream, you can keep your skin nourished and moisturized all year long.
+
+Gentle Moisturization
+
+A dollop of this cream is all you need to get rid of dry skin and to give it the much-needed moisturization.`,
+  Specifications: [
+    ["Sales Package", "1 Cream Jar"],
+    ["Model Name", "Creme"],
+    ["Quantity", "60 ml"],
+    ["Ideal For", "Women"],
+    ["Form", "Cream"],
+    ["Application Area", "Body"]
+  ],
+
+  images: ["https://rukminim1.flixcart.com/image/800/800/jxm5d3k0/moisturizer-cream/z/z/7/60-creme-nivea-cream-original-imafgfj3megpbmc9.jpeg?q=70",
+    "https://rukminim1.flixcart.com/image/800/800/jxm5d3k0/moisturizer-cream/z/z/7/60-creme-nivea-cream-original-imafgfj3megpbmc9.jpeg?q=70",
+    "https://rukminim1.flixcart.com/image/800/800/jxm5d3k0/moisturizer-cream/u/8/p/30-creme-nivea-cream-original-imafgfj5vtakxgjz.jpeg?q=70",
+    "https://rukminim1.flixcart.com/image/800/800/jxm5d3k0/moisturizer-cream/u/8/p/30-creme-nivea-cream-original-imafgfj3taggthar.jpeg?q=70"
+  ],
+  rating: 0,
+  rating_count: 0
+
+});
+
+// care1.save();
 
 
 const User = mongoose.model("User", userSchema);
-
 
 passport.use(User.createStrategy());
 passport.serializeUser(function(user, done) {
@@ -130,7 +167,7 @@ passport.use(new GoogleStrategy({
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
   function(accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({
+    User.findOrCreate({
       googleId: profile.id
     }, function(err, user) {
       return cb(err, user);
@@ -256,17 +293,17 @@ app.post("/register", function(req, res) {
 
 });
 var objects_array = {
-  "Dal":Dal,
-  "Shampoo":Shampoo,
-  "Conditioner":Conditioner,
-  "Peanut":Peanut,
-  "Groundnut":Groundnut,
-  "Soya":Soya,
-  "Oil":Oil,
-  "Ghee":Ghee
+  "Dal": Dal,
+  "Shampoo": Shampoo,
+  "Conditioner": Conditioner,
+  "Peanut": Peanut,
+  "Groundnut": Groundnut,
+  "Soya": Soya,
+  "Oil": Oil,
+  "Ghee": Ghee
 };
-var main_array = [Staples];
-var array = ['Staples', 'Snacks & Beverages', 'Packaged Food', 'Personal & Baby Care', 'Household Care', 'Dairy & Eggs'];
+var main_array = [Staples, Care];
+var array = ['Staples', 'Personal & Baby Care', 'Snacks & Beverages', 'Packaged Food', 'Household Care', 'Dairy & Eggs'];
 var array_collections = [
   [Dal, Peanut, Groundnut, Soya, Oil, Ghee],
   [],
@@ -275,13 +312,17 @@ var array_collections = [
   [],
   []
 ];
-var array_name = [Staples];
+var array_name = [Staples, Care];
 app.get("/main", function(req, res) {
 
   var grocery = [];
   if (req.isAuthenticated()) {
-    for (let i = 0; i < 1; i++) {
-      array_name[i].find({discount: {$gte:25}},function(err, value) {
+    for (let i = 0; i < 2; i++) {
+      array_name[i].find({
+        discount: {
+          $gte: 15
+        }
+      }, function(err, value) {
         if (err) {
 
         } else {
@@ -358,11 +399,15 @@ app.post("/product", function(req, res) {
   //     grocery_array: values
   //   });
   // });
-  main_array[Number(body[1])].find({name : {$regex : new RegExp(body[0], "i")}},function(err,values){
-      res.render("product", {
-        grocery_array: values,
-        category:body[1]
-      });
+  main_array[Number(body[1])].find({
+    name: {
+      $regex: new RegExp(body[0], "i")
+    }
+  }, function(err, values) {
+    res.render("product", {
+      grocery_array: values,
+      category: body[1]
+    });
   });
 
 });
@@ -371,7 +416,7 @@ app.get("/logout", function(req, res) {
   res.redirect("/");
 });
 
-app.post("/product_item",function(req,res){
+app.post("/product_item", function(req, res) {
 
 });
 
@@ -388,7 +433,7 @@ app.post("/item", function(req, res) {
 
 });
 
-app.get("/payment",function(req,res){
+app.get("/payment", function(req, res) {
   res.render("payment");
 });
 
