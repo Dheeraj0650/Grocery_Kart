@@ -505,14 +505,14 @@ wave3 {
 @keyframes movement1{
     0%{ opacity: 0.5;
         transform: rotate(0) translateX(-10rem);
-        width: 4rem;
-        border: 0.005rem solid white;
+        width: 64px;
+        border: 0.8px solid white;
         }
     100%{
         transform: rotate(0) translateX(33rem);
         opacity: 0.5;
-        width: 4rem;
-        border: 0.005rem solid white;
+        width: 64px;
+        border: 0.8px solid white;
         }
 }
 
@@ -523,14 +523,14 @@ wave3 {
 @keyframes movement2{
     0%{ opacity: 0.5;
         transform: rotate(0) translateX(-9rem);
-        width: 4rem;
-        border: 0.005rem solid white;
+        width: 64px;
+        border: 0.8px solid white;
         }
     100%{
         transform: rotate(0) translateX(33rem);
-        width: 4rem;
+        width: 64px;
         opacity: 0.5;
-        border: 0.05rem solid white;
+        border: 0.8px solid white;
         }
 }
 
@@ -541,14 +541,14 @@ wave3 {
 @keyframes movement3,movement4{
     0%{ opacity: 0.5;
         transform: rotate(0) translateX(-10rem);
-        width: 4rem;
-        border: 0.005rem solid white;
+        width: 64px;
+        border: 0.8px solid white;
         }
     100%{
         transform: rotate(0) translateX(33rem);
         opacity: 0.5;
-        width: 4rem;
-        border: 0.005rem solid white;
+        width: 64px;
+        border: 0.8px solid white;
         }
 }
 
