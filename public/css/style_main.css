@@ -30,7 +30,6 @@
 .imgBox img
 {
     width: 100%;
-
 }
 
 .social-menu {
@@ -49,18 +48,23 @@
 }
 .linkedin:hover{
 transform: translate(0,-50%);
+background-color: #0e76a8;
 }
 .twitter:hover{
 transform: translate(0,-50%);
+background-color: #00acee;
 }
 .facebook:hover{
 transform: translate(0,-50%);
+background-color: #3b5998;
 }
 .instagram:hover{
 transform: translate(0,-50%);
+background-color: #3f729b;
 }
 .youtube:hover{
 transform: translate(0,-50%);
+background-color: #FF0000;
 }
 
 .footer-container{

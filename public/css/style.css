@@ -577,3 +577,18 @@ wave3 {
   transform-origin: center;
   transform-box:fill-box;
 }
+
+@keyframes cart{
+    0%{
+        transform: rotate(0) translateX(-80rem);
+        opacity: 0;
+        }
+    100%{
+        transform: rotate(0) translateX(0rem);
+        opacity: 1;
+        }
+}
+
+.cart{
+    animation: cart 2s 1 0s ease;
+}

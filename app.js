@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(session({
-  secret: "LifeIsVeryShortAlwaysBeHappy.",
+  secret: "",
   resave: false,
   saveUninitialized: false
 }));
@@ -30,7 +30,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-mongoose.connect("mongodb+srv://Dheeru_0650:Kdheeraj@1234@mflix-t3llq.mongodb.net/Grocerys", {
+mongoose.connect("", {
   useNewUrlParser: true
 });
 
@@ -109,43 +109,7 @@ const Ghee = mongoose.model("Ghee", GrocerySchema);
 const Staples = mongoose.model("Staples", GrocerySchema);
 const Care = mongoose.model("Care", GrocerySchema);
 
-const care1 = new Care({
-  name: "NIVEA Creme  (60 ml)",
-  Actual_price: 99,
-  discount: 15,
-  final_price: 84,
-  count: 10,
-  quantity: ["60ml @140/100ml"],
-  Highlights: ["Application Area: Body", "For Women", "All Day Cream", "For All Skin Types", "Cream Form"],
-  description: `Dry, oily or combination skin - with this Nivea Creme, you can pamper your skin and give it all the nourishment it requires.
 
-Moisturizer for All Seasons
-
-Don't let the change in the weather affect your skin. With this Nivea Cream, you can keep your skin nourished and moisturized all year long.
-
-Gentle Moisturization
-
-A dollop of this cream is all you need to get rid of dry skin and to give it the much-needed moisturization.`,
-  Specifications: [
-    ["Sales Package", "1 Cream Jar"],
-    ["Model Name", "Creme"],
-    ["Quantity", "60 ml"],
-    ["Ideal For", "Women"],
-    ["Form", "Cream"],
-    ["Application Area", "Body"]
-  ],
-
-  images: ["https://rukminim1.flixcart.com/image/800/800/jxm5d3k0/moisturizer-cream/z/z/7/60-creme-nivea-cream-original-imafgfj3megpbmc9.jpeg?q=70",
-    "https://rukminim1.flixcart.com/image/800/800/jxm5d3k0/moisturizer-cream/z/z/7/60-creme-nivea-cream-original-imafgfj3megpbmc9.jpeg?q=70",
-    "https://rukminim1.flixcart.com/image/800/800/jxm5d3k0/moisturizer-cream/u/8/p/30-creme-nivea-cream-original-imafgfj5vtakxgjz.jpeg?q=70",
-    "https://rukminim1.flixcart.com/image/800/800/jxm5d3k0/moisturizer-cream/u/8/p/30-creme-nivea-cream-original-imafgfj3taggthar.jpeg?q=70"
-  ],
-  rating: 0,
-  rating_count: 0
-
-});
-
-// care1.save();
 
 
 const User = mongoose.model("User", userSchema);
@@ -160,59 +124,6 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
-passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRETS,
-    callbackURL: "https://limitless-cove-52361.herokuapp.com/auth/google/Grocery_Kart",
-    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({
-      googleId: profile.id
-    }, function(err, user) {
-      return cb(err, user);
-    });
-  }
-));
-
-passport.use(new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRETS,
-    callbackURL: "https://limitless-cove-52361.herokuapp.com/auth/github/Grocery_Kart",
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({
-      githubId: profile.id
-    }, function(err, user) {
-      return cb(err, user);
-    });
-  }
-));
-
-passport.use(new OutlookStrategy({
-    clientID: process.env.OUTLOOK_CLIENT_ID,
-    clientSecret: process.env.OUTLOOK_CLIENT_SECRETS,
-    callbackURL: "https://limitless-cove-52361.herokuapp.com/auth/outlook/Grocery_Kart",
-  },
-  function(accessToken, refreshToken, profile, done) {
-    var user = {
-      outlookId: profile.id,
-      name: profile.DisplayName,
-      email: profile.EmailAddress,
-      accessToken: accessToken
-    };
-    if (refreshToken)
-      user.refreshToken = refreshToken;
-    if (profile.MailboxGuid)
-      user.mailboxGuid = profile.MailboxGuid;
-    if (profile.Alias)
-      user.alias = profile.Alias;
-    User.findOrCreate(user, function(err, user) {
-      return done(err, user);
-    });
-  }
-));
-
 
 app.get("/", function(req, res) {
   // Oil.find({name : {$regex : new RegExp("nut", "i")}},function(err,values){
@@ -315,7 +226,7 @@ var array_collections = [
 var array_name = [Staples, Care];
 app.get("/main", function(req, res) {
 
-  var grocery = [];
+  var grocery = [0,0,0,0,0,0];
   if (req.isAuthenticated()) {
     for (let i = 0; i < 2; i++) {
       array_name[i].find({
@@ -326,7 +237,7 @@ app.get("/main", function(req, res) {
         if (err) {
 
         } else {
-          grocery.push(value);
+          grocery[i] =  value;
         }
       });
     }
