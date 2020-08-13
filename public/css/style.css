@@ -6,7 +6,7 @@
 .top-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+
   background-color: #36096d;
   overflow: hidden;
   z-index: 1;
@@ -74,7 +74,6 @@ wave3 {
     background-position-x: -1000px;
   }
 } */
-
 .nav-btn {
   border: 4px solid #07031a;
   background: none;
@@ -133,7 +132,7 @@ wave3 {
 
 .section-container {
   margin: 0;
-  padding:15% 1%;
+  padding: 15% 1%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,7 +145,7 @@ wave3 {
 
 .main {
   width: 27.875rem;
-  height: 37.25rem;
+  height: 40.25rem;
   background: red;
   overflow: hidden;
   background: url("1.jpg") no-repeat center/ cover;
@@ -251,7 +250,6 @@ wave3 {
   justify-content: center;
   position: relative;
   text-align: center;
-
 }
 
 .square .section-span1 {
@@ -291,6 +289,7 @@ wave3 {
   background: blue;
   opacity: 0.7;
 }
+
 .square .section-span3 {
   position: absolute;
   align-items: center;
@@ -309,6 +308,7 @@ wave3 {
   background: blue;
   opacity: 0.9%;
 }
+
 @keyframes animate3 {
   0% {
     transform: rotate(0deg);
@@ -321,30 +321,32 @@ wave3 {
 
 .content1 {
   /* padding:10rem 2rem; */
-  color:#fff;
+  color: #fff;
+  transition: 0.5s;
+  z-index: 1;
+}
 
+.content2 {
+  color: #fff;
   transition: 0.5s;
   z-index: 1;
 }
-.content2{
-  color:#fff;
-  transition: 0.5s;
-  z-index: 1;
-}
-.content1 h2{
+
+.content1 h2 {
   /* padding:10rem 2rem; */
   position: absolute;
-  top:6rem;
+  top: 6rem;
   right: 11rem;
 }
-.content2 h2{
+
+.content2 h2 {
   /* padding:10rem 2rem; */
   position: absolute;
-  top:6rem;
+  top: 6rem;
   right: 8rem;
 }
 
-.view_button{
+.view_button {
   border: 1px solid white;
   background: none;
   font-size: 1.2rem;
@@ -352,9 +354,226 @@ wave3 {
   cursor: pointer;
   transition: 0.8s;
   overflow: hidden;
-    border-radius: 2rem;
-    position: absolute;
-    bottom: 6rem;
-    left:9.5rem;
-  color:white;
+  border-radius: 2rem;
+  position: absolute;
+  bottom: 6rem;
+  left: 9.5rem;
+  color: white;
+}
+
+@keyframes yourAnimation1 {
+  0% {
+    transform: rotate(0) translateX(-50rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(0) translateX(0px);
+    opacity: 1;
+  }
+}
+
+.name {
+  animation: yourAnimation1 1s 1 0s ease;
+}
+
+@keyframes yourAnimation2 {
+  0% {
+    transform: rotate(0) translateX(-50rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(0) translateX(0rem);
+    opacity: 1;
+  }
+}
+
+.tag-line {
+  animation: yourAnimation2 1.3s 1 0s ease;
+}
+
+@keyframes yourAnimation3 {
+  0% {
+    transform: rotate(0) translateX(50rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(0) translateX(0rem);
+    opacity: 1;
+  }
+}
+
+.navbar-animate {
+  animation: yourAnimation3 1.2s 1 0s ease;
+}
+
+@keyframes yourAnimation4 {
+  0% {
+    transform: rotate(0) translateX(-10rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(0) translateX(0);
+    opacity: 1;
+  }
+}
+
+.navbar-brand {
+  animation: yourAnimation4 1s 1 0s ease;
+}
+
+#wheel2, #wheel1 {
+  animation: wheel 0.4s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes wheel {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+#item1 {
+  animation: item 0.5s infinite linear;
+  transform-origin: 100% 100%;
+  transform-box: fill-box;
+}
+
+@keyframes item {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(7deg);
+  }
+}
+
+#item1 {
+  animation: item1 0.5s infinite linear;
+  transform-origin: 100% 100%;
+  transform-box: fill-box;
+}
+
+@keyframes item1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(7deg);
+  }
+  100%{
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes item2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(-7deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#item2 {
+  animation: item2 0.5s infinite linear;
+  transform-origin: 100% 100%;
+  transform-box: fill-box;
+  transition: 0.5;
+}
+#item3 {
+  animation: item1 0.5s infinite linear;
+  transform-origin: 100% 100%;
+  transform-box: fill-box;
+  transition: 0.5;
+}
+
+
+@keyframes movement1{
+    0%{ opacity: 0.5;
+        transform: rotate(0) translateX(-10rem);
+        width: 4rem;
+        border: 0.005rem solid white;
+        }
+    100%{
+        transform: rotate(0) translateX(33rem);
+        opacity: 0.5;
+        width: 4rem;
+        border: 0.005rem solid white;
+        }
+}
+
+.movement2{
+    animation: movement1 0.7s infinite 0s linear;
+}
+
+@keyframes movement2{
+    0%{ opacity: 0.5;
+        transform: rotate(0) translateX(-9rem);
+        width: 4rem;
+        border: 0.005rem solid white;
+        }
+    100%{
+        transform: rotate(0) translateX(33rem);
+        width: 4rem;
+        opacity: 0.5;
+        border: 0.05rem solid white;
+        }
+}
+
+.movement1{
+    animation: movement2 0.6s infinite 0s linear;
+}
+
+@keyframes movement3,movement4{
+    0%{ opacity: 0.5;
+        transform: rotate(0) translateX(-10rem);
+        width: 4rem;
+        border: 0.005rem solid white;
+        }
+    100%{
+        transform: rotate(0) translateX(33rem);
+        opacity: 0.5;
+        width: 4rem;
+        border: 0.005rem solid white;
+        }
+}
+
+
+.movement3{
+    animation: movement1 0.8s infinite 0s linear;
+}
+
+.movement4{
+    animation: movement1 0.9s infinite 0s linear;
+}
+@keyframes animate4 {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-0.8rem);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.cart #body{
+  animation: animate4 0.5s infinite 0s linear;
+  transform-origin: center;
+  transform-box:fill-box;
 }
