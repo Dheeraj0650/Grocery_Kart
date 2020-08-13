@@ -565,7 +565,7 @@ wave3 {
     transform: translateY(0);
   }
   50%{
-    transform: translateY(-0.8rem);
+    transform: translateY(-12.8px);
   }
   100%{
     transform: translateY(0);
